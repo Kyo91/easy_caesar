@@ -69,7 +69,7 @@ class Args(argparse.Namespace):
             "--decrypt",
             action="store_false",
             dest="encrypt",
-            help="Decrypt the input string"
+            help="Decrypt the input string",
         )
         p.add_argument(
             "--debug",
@@ -81,7 +81,7 @@ class Args(argparse.Namespace):
             "input_string",
             action="store",
             default=self.input_string,
-            help="Target string to encrypt or decrypt."
+            help="Target string to encrypt or decrypt.",
         )
         p.parse_args(namespace=self)
 
@@ -98,9 +98,13 @@ def main():
         # passing in your args. E.g.
         cipher = Cipher(cipher_length=args.step_size, debug=dbg)
         if args.encrypt:
-            print("{} => {}".format(args.input_string, cipher.encrypt(args.input_string)))
+            print(
+                "{} => {}".format(args.input_string, cipher.encrypt(args.input_string))
+            )
         else:
-            print("{} => {}".format(args.input_string, cipher.decrypt(args.input_string)))
+            print(
+                "{} => {}".format(args.input_string, cipher.decrypt(args.input_string))
+            )
 
     except Exception as e:
         log.error("=============================================")
