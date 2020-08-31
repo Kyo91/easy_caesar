@@ -1,0 +1,29 @@
+easy\_caesar package
+====================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   easy_caesar.bin
+
+Submodules
+----------
+
+easy\_caesar.example module
+---------------------------
+
+.. automodule:: easy_caesar.example
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: easy_caesar
+   :members:
+   :undoc-members:
+   :show-inheritance:
