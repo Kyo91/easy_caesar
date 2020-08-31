@@ -63,7 +63,7 @@ setup(
     description="an cipher encrypter and decrypter",
     entry_points={
         "console_scripts": [
-            "my_example=easy_caesar.bin.my_example:main"
+            "easy_caesar=easy_caesar.bin.script:main"
         ],
     },
     install_requires=requirements,
