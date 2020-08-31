@@ -11,6 +11,14 @@ Subpackages
 Submodules
 ----------
 
+easy\_caesar.cipher module
+--------------------------
+
+.. automodule:: easy_caesar.cipher
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 easy\_caesar.example module
 ---------------------------
 

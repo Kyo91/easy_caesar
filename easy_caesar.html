@@ -102,6 +102,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-easy_caesar.cipher">easy_caesar.cipher module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-easy_caesar.example">easy_caesar.example module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-easy_caesar">Module contents</a></li>
 </ul>
@@ -198,7 +199,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="easy_caesar.bin.html">easy_caesar.bin package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="easy_caesar.bin.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="easy_caesar.bin.html#module-easy_caesar.bin.my_example">easy_caesar.bin.my_example module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="easy_caesar.bin.html#module-easy_caesar.bin.script">easy_caesar.bin.script module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="easy_caesar.bin.html#module-easy_caesar.bin">Module contents</a></li>
 </ul>
 </li>
@@ -207,6 +208,29 @@
 </div>
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-easy_caesar.cipher">
+<span id="easy-caesar-cipher-module"></span><h2>easy_caesar.cipher module<a class="headerlink" href="#module-easy_caesar.cipher" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="easy_caesar.cipher.Cipher">
+<em class="property">class </em><code class="sig-prename descclassname">easy_caesar.cipher.</code><code class="sig-name descname">Cipher</code><span class="sig-paren">(</span><em class="sig-param">cipher_length: int = 1</em>, <em class="sig-param">debug: bool = False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/easy_caesar/cipher.html#Cipher"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#easy_caesar.cipher.Cipher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class encapsulates the cipher object. Providing configuration options and exposing the
+encrypt/decrypt methods that make up the data contract.</p>
+<dl class="method">
+<dt id="easy_caesar.cipher.Cipher.decrypt">
+<code class="sig-name descname">decrypt</code><span class="sig-paren">(</span><em class="sig-param">input_str: str</em>, <em class="sig-param">encoding: str = 'utf8'</em><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/easy_caesar/cipher.html#Cipher.decrypt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#easy_caesar.cipher.Cipher.decrypt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decrypt the string using a Caesar Cipher</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="easy_caesar.cipher.Cipher.encrypt">
+<code class="sig-name descname">encrypt</code><span class="sig-paren">(</span><em class="sig-param">input_str: str</em>, <em class="sig-param">encoding: str = 'utf8'</em><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/easy_caesar/cipher.html#Cipher.encrypt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#easy_caesar.cipher.Cipher.encrypt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encrypt the string using a Caesar Cipher</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="module-easy_caesar.example">
 <span id="easy-caesar-example-module"></span><h2>easy_caesar.example module<a class="headerlink" href="#module-easy_caesar.example" title="Permalink to this headline">¶</a></h2>

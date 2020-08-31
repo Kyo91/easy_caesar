@@ -4,10 +4,10 @@ easy\_caesar.bin package
 Submodules
 ----------
 
-easy\_caesar.bin.my\_example module
------------------------------------
+easy\_caesar.bin.script module
+------------------------------
 
-.. automodule:: easy_caesar.bin.my_example
+.. automodule:: easy_caesar.bin.script
    :members:
    :undoc-members:
    :show-inheritance:
