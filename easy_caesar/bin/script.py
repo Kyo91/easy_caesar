@@ -11,7 +11,7 @@ import logging
 import sys
 import traceback
 
-from easy_caesar import Example, get_module_version
+from easy_caesar import Cipher, get_module_version
 
 ###############################################################################
 
@@ -25,20 +25,21 @@ logging.basicConfig(
 
 class Args(argparse.Namespace):
 
-    DEFAULT_FIRST = 10
-    DEFAULT_SECOND = 20
+    DEFAULT_STEP_SIZE = 30
+    DEFAULT_INPUT_STRING = "Hello, world."
 
     def __init__(self):
         # Arguments that could be passed in through the command line
-        self.first = self.DEFAULT_FIRST
-        self.second = self.DEFAULT_SECOND
+        self.encrypt = True
+        self.step_size = self.DEFAULT_STEP_SIZE
         self.debug = False
-        #
+        self.input_string = self.DEFAULT_INPUT_STRING
         self.__parse()
 
     def __parse(self):
         p = argparse.ArgumentParser(
-            prog="run_exmaple", description="A simple example of a bin script",
+            prog="easy_cipher",
+            description="Encrypt or decrypt a string",
         )
 
         p.add_argument(
@@ -48,25 +49,39 @@ class Args(argparse.Namespace):
             version="%(prog)s " + get_module_version(),
         )
         p.add_argument(
-            "-f",
-            "--first",
-            action="store",
-            dest="first",
-            type=int,
-            default=self.first,
-            help="The first argument value",
-        )
-        p.add_argument(
             "-s",
-            "--second",
+            "--step",
             action="store",
-            dest="second",
+            dest="step_size",
             type=int,
-            default=self.second,
-            help="The first argument value",
+            default=self.step_size,
+            help="Caesarian step size",
         )
         p.add_argument(
-            "--debug", action="store_true", dest="debug", help=argparse.SUPPRESS,
+            "-e",
+            "--encrypt",
+            action="store_true",
+            dest="encrypt",
+            help="Encrypt the input string",
+        )
+        p.add_argument(
+            "-d",
+            "--decrypt",
+            action="store_false",
+            dest="encrypt",
+            help="Decrypt the input string",
+        )
+        p.add_argument(
+            "--debug",
+            action="store_true",
+            dest="debug",
+            help=argparse.SUPPRESS,
+        )
+        p.add_argument(
+            "input_string",
+            action="store",
+            default=self.input_string,
+            help="Target string to encrypt or decrypt.",
         )
         p.parse_args(namespace=self)
 
@@ -81,11 +96,15 @@ def main():
 
         # Do your work here - preferably in a class or function,
         # passing in your args. E.g.
-        exe = Example(args.first)
-        exe.update_value(args.second)
-        print(
-            "First : {}\nSecond: {}".format(exe.get_value(), exe.get_previous_value())
-        )
+        cipher = Cipher(cipher_length=args.step_size, debug=dbg)
+        if args.encrypt:
+            print(
+                "{} => {}".format(args.input_string, cipher.encrypt(args.input_string))
+            )
+        else:
+            print(
+                "{} => {}".format(args.input_string, cipher.decrypt(args.input_string))
+            )
 
     except Exception as e:
         log.error("=============================================")

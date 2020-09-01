@@ -48,6 +48,9 @@ clean:  ## clean all build, python, and testing files
 build: ## run tox / run tests and lint
 	tox
 
+test:
+	pytest
+
 gen-docs: ## generate Sphinx HTML documentation, including API docs
 	rm -f docs/easy_caesar*.rst
 	rm -f docs/modules.rst
